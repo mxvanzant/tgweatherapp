@@ -1,0 +1,40 @@
+body {
+  padding-top: 30px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.ng-invalid.ng-dirty {
+  border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}
+
+.tglabel {
+  padding-bottom: 15px;
+}
+
+#loadingdiv {  
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:grey;
+    opacity: .5;
+ }
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -16px; /* -1 * image width / 2 */
+    margin-top: -16px;  /* -1 * image height / 2 */
+    display: block;     
+}
+

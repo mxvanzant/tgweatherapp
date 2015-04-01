@@ -3,6 +3,10 @@ A simple Angular/Ruby app for showing a three day weather forecast.
 
 This initial version is using a Sinatra back end. I used Sinatra since it was super easy to setup so I could concentrate on the Angular front end. It's been quite a while since I've done any Rails and even then it was not much :) Next, I'll transfer/transform the back end code from Sinatra to Rails.
 
+Just added the Rails version.
+
+In either case (Sinatra or Rails) be sure and add "gem 'thin'" to your Gemfile. There was a problem running on Webrick with one of the modules I required (can't remember which one, maybe rest-client).
+
 About the App:
   I created an ng directive to validate the zip code (could have also used the ng-pattern directive.)
 

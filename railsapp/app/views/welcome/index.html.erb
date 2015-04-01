@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="tgweatherapp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="resources/tgweatherapp.css">
+  <title>TG Weather App</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button -->
+        <span class="navbar-brand" href="#" ng-controller="ForecastController as forecast">TG Weather App{{forecast.getHeader()}}</span>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <!-- ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul -->
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="starter-template">
+      <div ng-controller="ForecastController as forecast">
+        <form name="zipForm" ng-controller="ZipController as zipCtrl"
+          ng-submit="(zipForm.$valid || zipCtrl.alert()) && zipCtrl.getForecast(forecast)" novalidate>
+          <div id="loadingdiv" ng-show="zipCtrl.isLoading">
+            <img src="resources/ajax-loader.gif" class="ajax-loader"/>
+          </div>
+          <div class="form-group">
+            <label class="tglabel" for="inputZip">Enter a Zip Code to see a Three Day Forecast:</label>
+            <div class="input-group">
+              <!-- input id="inputZip" class="form-control" type="text" ng-pattern="/^\d{5}$/" ng-model="zipCtrl.zip" required/ -->
+              <input id="inputZip" class="form-control" type="text" valid-zipcode ng-model="zipCtrl.zip" required/>
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-default">Get Forecast</button>
+              </span>
+            </div>
+          </div>
+        </form>
+
+        <div ng-repeat="item in forecast.db.data.forecastday">
+          <forecast-day></forecast-day>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="resources/jquery-2.1.3.js"></script>
+  <script src="resources/bootstrap/js/bootstrap.js"></script>
+  <script src="resources/angular/angular.js"></script>
+  <script src="resources/tgweatherapp.js"></script>
+</body>
+</html>
+
+
