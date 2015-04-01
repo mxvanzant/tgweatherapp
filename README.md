@@ -12,6 +12,8 @@ About the App:
 
   Also, this app requires an API key which is defaulted in the prompt box. This could be stored in local storage or a cookie (not implemented).
 
+I'm using Ruby 2.2.0.
+
 Try it out! :)
 
 
