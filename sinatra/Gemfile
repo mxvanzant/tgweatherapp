@@ -1,0 +1,12 @@
+# A sample Gemfile
+source "https://rubygems.org"
+
+# gem "rails"
+gem 'rubygems-update'
+gem 'bundler'
+gem 'thin'
+gem 'sinatra'
+gem 'rf-rest-open-uri'
+gem 'rest-client'
+gem 'json'
+
