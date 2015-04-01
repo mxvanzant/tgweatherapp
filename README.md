@@ -12,7 +12,7 @@ About the App:
 
   On the top bar I display the current zip code, the time from wunderground and whether the data was served remote (from wunderground) or from cache.
 
-  Data from wunderground is cached for 60 seconds max. The cache size limit is 1000 unique zip codes. If it reaches that size it is truncated. (For a real app I would use some kind of algorithm that would just get rid of the oldes entries to maintain a max cache size.) Also, it might make sense to use memcached or something like that...
+  Data from wunderground is cached for 60 seconds max. The cache size limit is 1000 unique zip codes. If it reaches that size it is truncated. (For a real app I would use some kind of algorithm that would just get rid of the older entries to maintain a max cache size.) Also, it might make sense to use memcached or something like that...
 
   Also, this app requires an API key which is defaulted in the prompt box. This could be stored in local storage or a cookie (not implemented).
 
